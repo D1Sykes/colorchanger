@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var time = new Date().getHours();
+      var colors = ['#000000', '#4C9A2A', '#4B5320', '#FFA500', '#EB3C62', '#BEA9DF', '#0066FF'];
+      var active = 0;
+      if (time >= 15) {
+        setInterval(function change() {
+          document.querySelector('body').style.background = colors[active];
+          active++;
+          if (active == colors.length) {
+            active = 1;
+          }
+          if (time == 9) {
+            active = 0;
+          }
+        }, 3000);
+      }
+
+    </script>
+  </body>
+
+</html>
